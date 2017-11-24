@@ -1,0 +1,26 @@
+FROM <%= registry %>/baseimage-node8.9.0
+
+### EXTJS ######
+RUN wget https://www.dropbox.com/s/r65scxfyfx31ik0/ext-6.2.0-gpl.zip?dl=0 -O /ext-6.2.0-gpl.zip &&\
+  unzip -q /ext-6.2.0-gpl.zip &&\
+  rm -rf /ext-6.2.0-gpl.zip &&\
+  chown -R root.root /ext-6.2.0 &&\
+  ln -s /ext-6.2.0 /ext
+
+RUN yum update -y &&\ 
+  yum install -y jre &&\
+  yum clean all
+
+COPY app/package.json  /
+RUN npm install
+
+RUN pip install --upgrade pip &&\
+  pip install dumb-init &&\
+  pip install supervisor
+
+<%= dockerfile_entrypoint_at_commit '7170f0f34e4d6cafada7adc5ba6b0f89ac35d39c' %>
+<%= sources_for_dockerfile :app %>
+<%= git_info_for_dockerfile %>
+
+CMD ["ruby", "/entrypoint"]
+WORKDIR /app

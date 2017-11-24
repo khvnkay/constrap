@@ -1,0 +1,5 @@
+project: constrap
+sources:
+  app:
+    - entrypoint_app.rb:/entrypoint
+    - app:/app

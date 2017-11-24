@@ -1,0 +1,4 @@
+[submodule "tasks"]
+  path = tasks
+  url = git@github.com:wattania/aboss-cmd.git
+  branch = master
