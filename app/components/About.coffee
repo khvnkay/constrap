@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Navbar, Button, Nav,MenuItem,NavItem, NavDropdown } from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
+import SeachContainer from '/app/containers/SeachContainer'
 
 
 
@@ -8,4 +9,29 @@ import { Navbar, Button, Nav,MenuItem,NavItem, NavDropdown } from 'react-bootstr
 
 export default class About extends Component
   render: ->
-    <div> About</div>
+    <div> 
+      <Carousel>
+      <Carousel.Item>
+        <img width={900} height={500} alt="900x500" src="/assets/header.jpg" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={900} height={500} alt="900x500" src="/assets/header.jpg" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img width={900} height={500} alt="900x500" src="/assets/header.jpg" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <SeachContainer />
+  </div>
