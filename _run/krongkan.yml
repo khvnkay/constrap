@@ -10,10 +10,11 @@ dev:
   extend: {from: _common, group: dev}
   <<: *self
   conf:
-    app_port: 80
-    ql_port: 88
-    api_port: 89
+    app_port: 90
+    ql_port: 99
+    api_port: 98
     api_net: dev
+
   vars:
     <<: *self_vars
 
@@ -21,7 +22,7 @@ test:
   extend: {from: _common, group: test}
   <<: *self
   conf:
-    api_port: 80
+    api_port: 90
 
   vars:
     <<: *self_vars
