@@ -3,26 +3,24 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import promiseMiddleware from 'redux-promise-middleware'
+
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
+import reducer from './reducers'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import First from './first'
-
+import Main from '/app/containers/Main'
+import * as _ from 'lodash'
 export default class App extends Component
-  middleware = [ thunk ]
- 
-  if process.env.NODE_ENV isnt 'production'
-    middleware.push(createLogger())
+  
+  middleware = applyMiddleware(promiseMiddleware(), thunk, createLogger())
+  store = createStore(reducer, {},composeWithDevTools(middleware))
+
   
 
-  store = createStore(
-    composeWithDevTools(),
-    applyMiddleware(...middleware)
-  )
-   
   render: ->
     <Provider store={store}>
-      <First/>
+      <Main />
     </Provider>
 
 
