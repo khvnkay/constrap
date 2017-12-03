@@ -1,86 +1,54 @@
 import React, { Component } from 'react'
 import { connect }  from 'react-redux'
-import {form,Checkbox, Radio, ControlLabel, FormControl, FormGroup , Button, HelpBlock} from 'react-bootstrap'
+import {Form,Checkbox, Radio, ControlLabel,Col, FormControl, FormGroup , Button, HelpBlock} from 'react-bootstrap'
+import '/app/assets/css/form.css'
 
 
-FieldGroup= ({ id, label, help, ...props }) ->
-  render: ->
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
 
 
 
 SeachContainer = ()->
-  
-  <form>
-    <FieldGroup
-      id="formControlsText"
-      type="text"
-      label="Text"
-      placeholder="Enter text"
-    />
-    <FieldGroup
-      id="formControlsEmail"
-      type="email"
-      label="Email address"
-      placeholder="Enter email"
-    />
-    <FieldGroup
-      id="formControlsPassword"
-      label="Password"
-      type="password"
-    />
-    <FieldGroup
-      id="formControlsFile"
-      type="file"
-      label="File"
-      help="Example block-level help text here."
-    />
+  <div className='form-container' >
+    <Form inline >
+      <div className='form-search'>
+        <FormGroup controlId="formControlsSelect">
+          <ControlLabel>Type</ControlLabel>
+          <FormControl className='textarea-form-control' componentClass="select" placeholder="Type">
+            <option value="BUY">select</option>
+            <option value="RENT">...</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup controlId="formControlsSelect">
+          <ControlLabel>Position</ControlLabel>
+          <FormControl className='textarea-form-control' componentClass="select" placeholder="Position">
+            <option value="AKAMAI">select</option>
+            <option value="THONGLOR">...</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup controlId="formControlsSelect">
+          <ControlLabel>Size</ControlLabel>
+          <FormControl className='textarea-form-control' componentClass="select" placeholder="Size">
+            <option value="120 mm">select</option>
+            <option value="20 mm">...</option>
+          </FormControl>
+        </FormGroup>
+        <FormGroup controlId="formControlsSelect">
+          <ControlLabel>Range</ControlLabel>
+          <FormControl className='textarea-form-control' componentClass="select" placeholder="Range">
+            <option value="100<100 K">select</option>
+            <option value="200>">...</option>
+          </FormControl>
+        </FormGroup>
 
-    <Checkbox checked readOnly>
-      Checkbox
-    </Checkbox>
-    <Radio checked readOnly>
-      Radio
-    </Radio>
 
- 
 
-    <FormGroup controlId="formControlsSelect">
-      <ControlLabel>Select</ControlLabel>
-      <FormControl componentClass="select" placeholder="select">
-        <option value="select">select</option>
-        <option value="other">...</option>
-      </FormControl>
-    </FormGroup>
-    <FormGroup controlId="formControlsSelectMultiple">
-      <ControlLabel>Multiple select</ControlLabel>
-      <FormControl componentClass="select" multiple>
-        <option value="select">select (multiple)</option>
-        <option value="other">...</option>
-      </FormControl>
-    </FormGroup>
-
-    <FormGroup controlId="formControlsTextarea">
-      <ControlLabel>Textarea</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="textarea" />
-    </FormGroup>
-
-    <FormGroup>
-      <ControlLabel>Static text</ControlLabel>
-      <FormControl.Static>
-        email@example.com
-      </FormControl.Static>
-    </FormGroup>
-
-    <Button type="submit">
-      Submit
-    </Button>
-  </form>
-
+        <Button type="submit">
+          Submit
+        </Button>
+      </div>
+      
+    </Form>
+  </div>
 
 
 

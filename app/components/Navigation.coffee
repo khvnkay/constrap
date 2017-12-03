@@ -3,12 +3,12 @@ import { Navbar, Button, Nav,MenuItem,NavItem, NavDropdown } from 'react-bootstr
 import About from '/app/components/About'
 import { connect }                    from 'react-redux'
 import { navBarSelect } from '/app/actions/index'
-
+import '/app/assets/css/form'
 
 
 
 Navigation = ({selectKey}) =>
-
+  console.log "naviga------",selectKey
   <Navbar inverse collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>

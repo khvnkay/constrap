@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect }  from 'react-redux'
 import { Tabs, Tab, Col, Row, Nav, NavItem,NavDropdown} from 'react-bootstrap'
 import About from '/app/components/About'
-
+import '/app/assets/css/form.css'
 TapContainer = ({active})->
   
   console.log "actine----",active.navBarSelect
@@ -11,7 +11,7 @@ TapContainer = ({active})->
       <Col sm={12}>
         <Tab.Content animation>
           <Tab.Pane eventKey={1}>
-            <About />
+            <About />   
           </Tab.Pane>
           <Tab.Pane eventKey={2}>
             Tab 2 content

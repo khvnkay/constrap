@@ -1,0 +1,26 @@
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: stretch;
+  justify-content: space-between;
+  flex: 1;
+  padding: 20px;
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.form-search{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+}
+.textarea-form-control{
+  margin: 20px;
+}
+.form-group{
+  margin: 0px 20px;
+}
