@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { connect }  from 'react-redux'
 import { Tabs, Tab, Col, Row, Nav, NavItem,NavDropdown} from 'react-bootstrap'
 import About from '/app/components/About'
+import Contact from '/app/components/Contact'
+import Service from '/app/components/Service'
+import Login from '/app/components/Login'
+
 import '/app/assets/css/form.css'
 TapContainer = ({active})->
   
@@ -14,20 +18,16 @@ TapContainer = ({active})->
             <About />   
           </Tab.Pane>
           <Tab.Pane eventKey={2}>
-            Tab 2 content
+            <Service />
           </Tab.Pane>
           <Tab.Pane eventKey={3}>
-            Tab 3.1 content
+            <Contact />
+            
           </Tab.Pane>
           <Tab.Pane eventKey={4}>
-            Tab 3.2 content
+            <Login />
           </Tab.Pane>
-          <Tab.Pane eventKey={5.1}>
-            Tab 3.3 content
-          </Tab.Pane>
-          <Tab.Pane eventKey={5.2}>
-            Tab 3.4 content
-          </Tab.Pane>
+        
         </Tab.Content>
       </Col>
     </Row>
