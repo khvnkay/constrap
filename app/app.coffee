@@ -10,13 +10,14 @@ import thunk from 'redux-thunk'
 import reducer from './reducers'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import Main from '/app/containers/Main'
+import {navBarSelect} from '/app/actions'
 import * as _ from 'lodash'
 export default class App extends Component
   
   middleware = applyMiddleware(promiseMiddleware(), thunk, createLogger())
   store = createStore(reducer, {},composeWithDevTools(middleware))
 
-  
+  store.dispatch(navBarSelect(1))
 
   render: ->
     <Provider store={store}>
