@@ -11,3 +11,6 @@ export navBarSelect = (key)=> (dispatch) =>
   dispatch keySelect(key)
   
  
+
+export getData = () =>
+  console.log "dd"
