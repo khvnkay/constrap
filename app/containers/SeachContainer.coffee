@@ -44,15 +44,12 @@ SeachContainer = ()->
         { 
           s = []
           c = []
-
+          source = []
           data.map (demo) ->
             s = Object.keys(demo)
-            console.log "ssss----",s 
+            source.push demo 
           a =chunk(s)
-          
-
-          console.log "a-----",a
-          <HeadSearch  data={a}  />
+          <HeadSearch  head={a}   data={source} />
 
          
 

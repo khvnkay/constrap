@@ -2,21 +2,20 @@
 import React, { Component } from 'react'
 import { FormGroup, ControlLabel, FormControl,Thumbnail, Col } from 'react-bootstrap'
 import Search from '/app/components/Search'
+import Option from '/app/components/Option'
 import _ from 'lodash'
 
-HeadSearch = ({data}) =>
-  console.log "keyyyy",data[0]
-  v= {1: "s",2: "d",3: "ds",4:"t"}
+HeadSearch = ({head , data}) =>
   <div>
     <FormGroup controlId="formControlsSelect">
       {
         arr = []
-        _.each data[0], (v,k) ->
-          console.log ",v",v
+        _.each head[0], (v,k) ->
           arr.push ( 
             <div>
               <ControlLabel>{v}</ControlLabel>
-              <FormControl className='textarea-form-control' componentClass="select" placeholder="Type" >dddd</FormControl>
+              
+              <Option keys={k.id} data={data} value={v}/>
             </div>)
         arr
       }
