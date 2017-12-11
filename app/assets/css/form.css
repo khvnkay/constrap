@@ -45,3 +45,8 @@
 .contact-mar{
   margin: 20px;
 }
+
+.form-list{
+  padding: 20px;
+  display: -webkit-box;
+}

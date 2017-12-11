@@ -12,8 +12,8 @@ Navigation = ({selectKey}) =>
 
   <Navbar inverse collapseOnSelect>
     <Navbar.Header>
-      <Navbar.Brand>
-        <a href="#">React-Bootstrap</a>
+      <Navbar.Brand  >
+        <a  href="#">React-Bootstrap</a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

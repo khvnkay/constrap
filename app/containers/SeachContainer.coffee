@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect }  from 'react-redux'
-import {Form,Checkbox, Radio, ControlLabel,Col, FormControl, FormGroup , Button, HelpBlock} from 'react-bootstrap'
+import {Form,Checkbox, Radio, Row,Col, FormControl, FormGroup , Button, Grid} from 'react-bootstrap'
 import '/app/assets/css/form.css'
 import _ from 'lodash'
-import Search from '/app/components/Search'
 import HeadSearch from '/app/components/HeadSearch'
+import ListSearch from '/app/components/ListSearch'
 
 
 
@@ -26,41 +26,48 @@ data =[
   size: 160
   rate: 3000
   ]
+head=[
+  "BTS Station"
 
-chunk=(date) ->
-  temporal = []
-  for i of date 
-    temporal.push(date.slice(i,i+date.length))
-  
-          
-  temporal
+]
+
+
 
 SeachContainer = ()->
-  
 
-  <div className='form-container' >
-    <Form inline >
-      <div className='form-search'>
-        { 
-          s = []
-          c = []
-          source = []
-          data.map (demo) ->
-            s = Object.keys(demo)
-            source.push demo 
-          a =chunk(s)
-          <HeadSearch  head={a}   data={source} />
-
-         
-
-
-        }
-     
-      </div>
-      
-    </Form>
-  </div>
-
+  <Grid>
+    <Row>
+      <Col className='form-list' xs={6} md={4} >
+        <ListSearch title="BTS station" >
+          { 
+            data.map (s) ->
+              <HeadSearch  data={s.btsStation} />
+          }
+        </ListSearch>
+        <ListSearch title="Type" >
+          { 
+            data.map (s) ->
+              <HeadSearch  data={s.type} />
+          }
+        </ListSearch>
+        <ListSearch title="Size" >
+          { 
+            data.map (s) ->
+              <HeadSearch  data={s.size} />
+          }
+        </ListSearch>
+        <ListSearch title="Rate" >
+          { 
+            data.map (s) ->
+              <HeadSearch  data={s.rate} />
+          }
+        </ListSearch>
+        <Button type="submit">
+          Submit
+        </Button>
+      </Col>
+    </Row>
+  </Grid>
 
 
   

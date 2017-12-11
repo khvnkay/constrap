@@ -1,30 +1,13 @@
 
 import React, { Component } from 'react'
-import { FormGroup, ControlLabel, FormControl,Thumbnail, Col } from 'react-bootstrap'
-import Search from '/app/components/Search'
-import Option from '/app/components/Option'
+import { FormGroup,Row, ControlLabel, FormControl,Thumbnail, Col } from 'react-bootstrap'
+import FieldList from '/app/components/FieldList'
 import _ from 'lodash'
 
-HeadSearch = ({head , data}) =>
-  <div>
-    <FormGroup controlId="formControlsSelect">
-      {
-        arr = []
-        _.each head[0], (v,k) ->
-          arr.push ( 
-            <div>
-              <ControlLabel>{v}</ControlLabel>
-              
-              <Option keys={k.id} data={data} value={v}/>
-            </div>)
-        arr
-      }
-
+HeadSearch = ({data}) =>
       
-    </FormGroup>
-
-  </div>
-
+  <option value="d">{data}</option>
+      
 
   
 
