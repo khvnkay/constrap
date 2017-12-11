@@ -62,6 +62,13 @@ SeachContainer = ()->
               <HeadSearch  data={s.rate} />
           }
         </ListSearch>
+       
+      </Col>
+
+     
+    </Row>
+    <Row>
+      <Col>
         <Button type="submit">
           Submit
         </Button>

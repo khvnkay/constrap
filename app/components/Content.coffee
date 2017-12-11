@@ -8,17 +8,11 @@ import Login from '/app/components/Login'
 
 
 
-a =(key) ->
-  console.log  key.navBarSelect.navs 
-  if key.navBarSelect.navs 
-    activeKey = key.navBarSelect.navs
- 
-
 
 Content = ({active}) =>
-  <Tab.Container id="tabs-with-dropdown"  onSelect={ 'well' } activeKey={active} >
+  <Tab.Container   onSelect={ 'well' } activeKey={active} >
     <Row className="clearfix">
-      <Col sm={12}>
+      <Col >
         <Tab.Content animation>
           <Tab.Pane eventKey={1} >
             <About />   

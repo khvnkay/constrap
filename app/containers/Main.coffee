@@ -9,7 +9,9 @@ export default class Main extends Component
   render: ->
     <div>
       <Navigation />
-      <TapContainer />
+      <div style={coler:'red'}>  
+        <TapContainer />
+      </div>
     </div>
 
 

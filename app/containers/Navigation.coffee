@@ -10,7 +10,7 @@ import '/app/assets/css/form'
 
 Navigation = ({selectKey}) =>
 
-  <Navbar inverse collapseOnSelect>
+  <Navbar inverse collapseOnSelect style={width: '100%'}>
     <Navbar.Header>
       <Navbar.Brand  >
         <a  href="#">React-Bootstrap</a>
